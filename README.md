@@ -1,4 +1,4 @@
-# Сервер для проекта [blog_project_frontend](https://github.com/unnastasya/mern_blog_frontend)
+# Сервер для проекта [blog_project_frontend](https://github.com/unnastasya/blog_project_frontend)
 
 ## Стек
 * Node.js
