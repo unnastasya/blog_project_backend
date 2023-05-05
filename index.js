@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const multer = require("multer");
 const cors = require("cors");
+require('dotenv').config();
 
 const {
 	registerValidation,
@@ -11,18 +12,18 @@ const {
 const { UserController, PostController } = require("./controllers/index.js");
 const { handleValidationErrors, checkAuth } = require("./middlewares/index.js");
 
+
+
+const app = express();
+
 mongoose
-	.connect(
-		"mongodb+srv://unnastasya:Anast31P12@cluster0.wiguxq5.mongodb.net/users?retryWrites=true&w=majority"
-	)
+	.connect(process.env.MONGO_URL)
 	.then(() => {
 		console.log("Connect DB");
 	})
 	.catch(() => {
 		console.log("Error DB");
 	});
-
-const app = express();
 
 const storage = multer.diskStorage({
 	destination: (_, __, cb) => {
